@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
 export function SkillCard({skill}){
   return(
-    <TouchableOpacity key={skill} style={styles.btnSkill}>
+    <TouchableOpacity style={styles.btnSkill}>
       <Text style={styles.textSkill}>
         {skill}
       </Text>
