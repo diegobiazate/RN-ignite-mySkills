@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from "react-native";
 
 const styles = StyleSheet.create({
   btnSkill: {
@@ -9,15 +9,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 5
   },
-  textSkill:{
+  textSkill: {
     color: '#FFF',
     fontSize: 18
   }
 });
 
-export function SkillCard({skill}){
-  return(
-    <TouchableOpacity style={styles.btnSkill}>
+interface SkillCardProps extends TouchableOpacityProps {
+  skill: string;
+}
+
+export function SkillCard({ skill, ...rest }: SkillCardProps) {
+  return (
+    <TouchableOpacity style={styles.btnSkill} {...rest}>
       <Text style={styles.textSkill}>
         {skill}
       </Text>
